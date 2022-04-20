@@ -5,5 +5,3 @@ Our project files are attached.
 Front end is HTML5 with inline CSS and javascript.
 Backend is Flask with python (pandas and plotly express for data manipulation and visualization, respectively).
 
-We deployed it on pythonanywhere:
-https://veeva.pythonanywhere.com/
