@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+<title>{% block title%}Veeva Systems: Healthcare Analytics{% endblock %}</title>
+<style>
+    table.print-friendly tr td, table.print-friendly tr th {
+        page-break-inside: avoid;
+    }
+</style>
+
+{% block content%}
+
+<!--Top Five! -->
+ <div class="w3-container" id="top5" style="margin-top:75px;padding-left:5em;">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Leadership Board: Top Five Prescribers by Product</b></h1>
+        <hr style="width:50px;border:5px solid red" class="w3-round">
+<br><br>
+<form action='/home' method="post">
+<label for="state"> Filter by US State </label>
+<select  id="state" name="state" required>
+    <option value="All">All US States</option>
+	<option value="Alabama">Alabama (AL)</option>
+	<option value="Alaska">Alaska (AK)</option>
+	<option value="Arizona">Arizona (AZ)</option>
+	<option value="Arkansas">Arkansas (AR)</option>
+	<option value="California">California (CA)</option>
+	<option value="Colorado">Colorado (CO)</option>
+	<option value="Connecticut">Connecticut (CT)</option>
+	<option value="Delaware">Delaware (DE)</option>
+	<option value="District of Columbia">District Of Columbia (DC)</option>
+	<option value="Florida">Florida (FL)</option>
+	<option value="Georgia">Georgia (GA)</option>
+	<option value="Hawaii">Hawaii (HI)</option>
+	<option value="Idaho">Idaho (ID)</option>
+	<option value="Illinois">Illinois (IL)</option>
+	<option value="Indiana">Indiana (IN)</option>
+	<option value="Iowa">Iowa (IA)</option>
+	<option value="Kansas">Kansas (KS)</option>
+	<option value="Kentucky">Kentucky (KY)</option>
+	<option value="Lousiana">Louisiana (LA)</option>
+	<option value="Maine">Maine (ME)</option>
+	<option value="Maryland">Maryland (MD)</option>
+	<option value="Massachusetts">Massachusetts (MA)</option>
+	<option value="Michigan">Michigan (MI)</option>
+	<option value="Minnesota">Minnesota (MN)</option>
+	<option value="Mississippi">Mississippi (MS)</option>
+	<option value="Missouri">Missouri (MO)</option>
+	<option value="Montana">Montana (MT)</option>
+	<option value="Nebraska">Nebraska (NE)</option>
+	<option value="Nevada">Nevada (NV)</option>
+	<option value="New Hampsire">New Hampshire (NH)</option>
+	<option value="New Jersey">New Jersey (NJ)</option>
+	<option value="New Mexico">New Mexico (NM)</option>
+	<option value="New York">New York (NY)</option>
+	<option value="North Carolina">North Carolina (NC)</option>
+	<option value="North Dakota">North Dakota (ND)</option>
+	<option value="Ohio">Ohio (OH)</option>
+	<option value="Oklahoma">Oklahoma (OK)</option>
+	<option value="Oregon">Oregon (OR)</option>
+	<option value="Pennsylvania">Pennsylvania (PA)</option>
+	<option value="Rhode Island">Rhode Island (RI)</option>
+	<option value="South Carolina">South Carolina (SC)</option>
+	<option value="South Dakota">South Dakota (SD)</option>
+	<option value="Tennessee">Tennessee (TN)</option>
+	<option value="Texas">Texas (TX)</option>
+	<option value="Utah">Utah (UT)</option>
+	<option value="Vermont">Vermont</option>
+	<option value="Virgina">Virginia</option>
+	<option value="Washington">Washington</option>
+	<option value="West Virginia">West Virginia</option>
+	<option value="Wisconson">Wisconsin</option>
+	<option value="Wyoming">Wyoming</option>
+</select>
+<input type="submit"></input>
+</form>
+</div>
+<br><br><br><br>
+<div style="width:70%;display: table;padding-left:10em;">
+<div style="display: table-row">
+    <div style="display: table-cell;">
+    <h2><u>Cholecap</u></h2>
+    <ul>
+   {% for names in names_1 %}
+    <li>{{ names }}</li>
+    {% endfor %}
+    </ul>
+    </div>
+    <div style="display: table-cell;">
+    <h2><u>Zap-a-Pain</u></h2>
+    <ul>
+   {% for names in names_2 %}
+    <li>{{ names }}</li>
+    {% endfor %}
+    </ul>
+    </div>
+</div>
+<div style="display: table-row">
+    <div style="display: table-cell;">
+     <h2><u>Nasalclear</u></h2>
+    <ul>
+   {% for names in names_3 %}
+    <li>{{ names }}</li>
+    {% endfor %}
+    </ul>
+    </div>
+    <div style="display: table-cell;">
+    <h2><u>Nova-itch</u></h2>
+    <ul>
+   {% for names in names_4 %}
+    <li>{{ names }}</li>
+    {% endfor %}
+    </ul>
+    </div>
+</div>
+</div>
+<div style="height:600px;"></div>
+{% endblock %}

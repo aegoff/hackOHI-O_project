@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+<title>{% block title%}Veeva Systems: Healthcare Analytics{% endblock %}</title>
+
+
+{% block content%}
+<style>
+  table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+}
+
+thead tr {
+    background-color: 'red';
+    color: #ffffff;
+    text-align: left;
+}
+
+th,td {
+    padding: 12px 15px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+</style>
+<!--Top Doctors-->
+<h1 class="w3-xxxlarge w3-text-red" style="margin-top:75px;"><b>All Prescribers By Rate of Prescription</b></h1>
+<hr style="margin-left:5em;width:50px;border:5px solid red" class="w3-round" >
+<br><br>
+<form action='/prescribers' method="post" style="padding-left:5em;width:1000px;">
+<label for="prescriber">Choose a Level of Prescriber</label>
+
+<select id="prescriber" name="prescriber">
+    <option value="75+">Highest Prescribers</option>
+    <option value="50+">Mid-Highest Prescribers</option>
+    <option value="25+">Mid-Lowest Prescribers</option>
+    <option value="0+">Lowest Prescribers</option>
+</select>
+<input type="submit"/>
+</form>
+<br><br>
+
+<div style="padding-left:10em;">
+{% for table in tables %}
+    {{ table|safe }}
+  {% endfor %}
+</div>
+<div style="height:600px;"></div>
+{% endblock %}
